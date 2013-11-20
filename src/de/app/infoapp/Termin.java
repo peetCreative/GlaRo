@@ -274,13 +274,13 @@ public class Termin implements Serializable, Comparable<Termin> {
 			if(persinfo.equals(""))
 				persinfo = "Musik: "+ getMusikVeranwortlicher();
 			else
-				persinfo =persinfo+ umbruch +"Musik: "+ getMusikVeranwortlicher();
+				persinfo =persinfo+ umbruch +" Musik: "+ getMusikVeranwortlicher();
 		}
 		if (!(getEssenVerantworlicher().equals("-"))){
 			if(persinfo.equals(""))
 				persinfo = "Essen: "+ getEssenVerantworlicher();
 			else
-				persinfo =persinfo+ umbruch+"Essen: "+ getEssenVerantworlicher();
+				persinfo =persinfo+ umbruch+" Essen: "+ getEssenVerantworlicher();
 				
 		}
 		

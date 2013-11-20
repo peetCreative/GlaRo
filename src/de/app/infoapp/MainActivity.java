@@ -5,6 +5,7 @@ import java.util.Locale;
 import de.app.infoapp.R;
 
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.BroadcastReceiver;
@@ -31,6 +32,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 public class MainActivity extends FragmentActivity implements
 ActionBar.TabListener {
 
@@ -108,6 +110,11 @@ ActionBar.TabListener {
 		mViewPager = (ViewPager) findViewById(R.id.pager);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		
+		
+		
+		
+		
+		
 		// When swiping between different sections, select the corresponding
 		// tab. We can also use ActionBar.Tab#select() to do this if we have
 		// a reference to the Tab.
@@ -151,6 +158,10 @@ ActionBar.TabListener {
 			SetupDialogFragment sdf = new SetupDialogFragment();
 			sdf.show(getSupportFragmentManager(), "fjdsdfkdslfl");	
 		}
+	}
+
+	private int extracted() {
+		return R.color.color1;
 	}
 	
 	
