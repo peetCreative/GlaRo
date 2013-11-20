@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/holo_orange_light" >
+
+    <TextView
+        android:id="@+id/dialog_settings_groupes_groupesTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_main_setup_groupsTV"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/dialog_settings_groupes_refresh"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:text="@string/dialog_settings_groupes_refresh" 
+        android:onClick="onClick"/>
+
+    <ListView
+        android:id="@+id/dialog_settings_groupes_groupesLV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+ 
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    
+    <color name="app_bg">#d7ead7</color>
+    <color name="termine_morgen_bg">#019ee1</color>
+    <color name="termine_morgen_schrift">#d9e6b0</color>
+    <color name="termine_heute_bg">#ffed02</color>
+    <color name="termine_heute_schrift">#a6d7d3</color>
+    <color name="termine_zeilenfarbe1">#dde383</color>
+    <color name="termine_zeilenfarbe2">#72bb83</color>
+    <color name="termine_schrift_schwarz">#000000</color>
+    <color name="settings_background">#ffd800</color>
+    
+    
+</resources>

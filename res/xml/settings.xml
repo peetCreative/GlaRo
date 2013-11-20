@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    	
+    	
+
+		    <PreferenceScreen
+    	    android:title="@string/settings_groupes_title"
+    	    android:summary="@string/settings_groupes_summary">
+		        <intent android:action="de.app.info_app.GroupePreferenceActivity"/>
+		    </PreferenceScreen>
+		    
+
+    
+
+		<CheckBoxPreference
+		    android:key="@string/settings_key_notify_is"
+		    android:title="@string/settings_whichdatenotify_title"
+		    android:summaryOn="@string/settings_whichdatenotify_summary_on"
+		    android:summaryOff="@string/settings_whichdatenotify_summary_off"
+		    android:defaultValue="true"/>
+		<ListPreference
+            android:key="@string/settings_key_noify_when"
+            android:title="@string/settings_termin_whennotify_title"
+            android:summary="@string/settings_termin_whennotify_summarya"
+            android:entries="@array/listArray_disp"
+	    	android:entryValues="@array/listValues"
+	    	android:defaultValue="20min"
+	    	android:positiveButtonText="@string/settings_positivb"
+	    	android:negativeButtonText="@string/settings_negativb"/>
+		
+        
+</PreferenceScreen>

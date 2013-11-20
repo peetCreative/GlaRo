@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listArray_disp">
+   <item>wenns beginnt</item>
+   <item>20 Minuten vorher</item>
+   <item>1 Stunde vorher</item>
+   <item>3 Stunden vorher</item>
+   <item>morgens um 6 Uhr!!!</item>
+   <item>doch lieber erst um 8 ;-)</item>
+
+</string-array>
+  
+<string-array name="listValues">
+   <item>0min</item>
+   <item>20min</item>
+   <item>1hour</item>
+   <item>3hour</item>
+   <item>6am</item>
+   <item>8am</item>
+
+</string-array>
+<string-array name="defaultArray"/>
+
+    
+</resources>

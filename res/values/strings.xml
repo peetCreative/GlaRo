@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Info-App</string>
+    
+    
+    <string name="url_losungen_herrenhuter1">© Evangelische Brüder-Unität – Herrnhuter Brüdergemeine</string>
+    <string name="url_losungen_herrenhuter2">Weitere Informationen finden Sie hier.</string>
+    <string name="url_chatbox">http://240391.shoutbox.de/?extcss=http://app.jg-roedlitz.de/shout.css</string>
+    <string name="url_URLseite.txt">http://app.jg-roedlitz.de/URLseite.txt</string>
+    <string name="url_losungen">http://app.jg-roedlitz.de/Losungen</string>
+    <string name="url_filename_info">/info.txt</string>
+    <string name="url_filename_termine">/termine.txt</string>
+    <string name="storage_filename_termine">Termine1.ser</string>
+    <string name="storage_filename_losungen">Losungen1.xml</string>
+    <string name="storage_filename_groupes">Groupes1.ser</string>
+    <string name="storage_filename_infotext">Info1.ser</string>
+    <string name="storage_filename_termine_notify">NotificationTermine1.ser</string>
+    <string name="storage_folder">/JG-Info</string>
+
+    <string name="broadcast_intent_downloadfinished" >DownloadFinished</string>
+    <string name="broadcast_intent_losugenfinished" >LosungenFinished</string>
+    <string name="broadcast_intent_groupefinished" >GroupeFinished</string>
+    
+    
+    
+    <string name="title_section1">Termin</string>
+    <string name="title_section2">Losung</string>
+    <string name="title_section3">Chatroom</string>
+    <string name="title_section4">Bilder</string>
+    
+    <string name="option_settings">Einstellungen</string>
+    <string name="option_refresh">Aktualisieren</string>
+    <string name="option_next_info">Nächster Infotext</string>
+    
+    
+    <string name="settings_key_notify_is">notify</string>
+    <string name="settings_key_groupes">groupes</string>
+    <string name="settings_key_noify_when">when</string>
+    <string name="settings_key_losung">losung</string>
+    <string name="settings_key_chat_name">chat_name</string>
+    <string name="settings_key_chat_sync">chat_sync</string>
+    
+    <string name="dialog_main_setup_title">Initialisierung</string>
+    <string name="dialog_main_setup_usernameTV">Dein Benutzername im Chat</string>
+    <string name="dialog_main_setup_usernameET_hint">Benutzername</string>
+    <string name="dialog_main_setup_groupsTV">Wähle deine Gruppen</string>
+    <string name="dialog_settings_groupes_refresh">Hole neue Gruppen</string>
+
+    <string name="section_losung_losung">Losung</string>
+    <string name="section_losung_losungsvers">Losungsvers</string>
+    <string name="section_losung_lehrtextSmallText">Lehrtext</string>
+    <string name="section_losung_losungSmallText">Losung</string>
+    <string name="section_losung_lehrtext">Lehrtext</string>
+    <string name="section_losung_lehrtextvers">Lehrtextvers</string>
+
+
+    <string name="settings_category_termin">Termin Einstellungen</string>
+    <string name="settings_termin_whennotify_title">Benachrichtigungszeitpunkt</string>
+    <string name="settings_termin_whennotify_name">Benachrichtigungszeitpunkt</string>
+    <string name="settings_termin_whennotify_summarya">Du wirst</string>
+    <string name="settings_termin_whennotify_summaryb">benachrichtigt.</string>
+    <string name="settings_termin_whennotify_nullmin">wenn es beginnt </string>
+    <string name="settings_termin_whennotify_zwanzigmin">20 Minuten vorher </string>
+    <string name="settings_termin_whennotify_einsh">eine Stunde vorher </string>
+    <string name="settings_termin_whennotify_dreih">drei Stunden vorher </string>
+    <string name="settings_termin_whennotify_sechsam">morgens um 6 Uhr </string>
+    <string name="settings_termin_whennotify_achtam">morgens um 8 Uhr </string>
+    <string name="settings_whichdatenotify_title">Benachrichtigungen</string>
+    <string name="settings_whichdatenotify_summary_on">Du wirst benachrichtigt  nach Wahl</string>
+    <string name="settings_whichdatenotify_summary_off">Du wirst nie benachrichtigt</string>
+    <string name="settings_whichlosung_title">Deine Losung</string>
+    <string name="settings_whichlosung_summary">Hier steht welche Losung du bekommst</string>
+    <string name="settings_filestorage_title">Speicherort</string>
+    <string name="settings_filestorage_summary">wo wirds gespeichert</string>
+    <string name="settings_groupes_title">Deine Gruppen</string>
+    <string name="settings_groupes_summary">Wähle deine Gruppen von denen du Termine erhälst</string>
+    <string name="settings_jgaccesscode_defvalue">roedlitz</string>
+    <string name="settings_positivb">OK</string>
+    <string name="settings_negativb">Abrechen</string>
+    <string name="settings_groupes_dialog_title">Deine Gruppen</string>
+
+    <string name="section_termine_detaildialog_zusatzinfo">zusatzinfo</string>
+    <string name="section_termine_detaildialog_checkboxremember">Erinnere mich</string>
+
+    <string name="section_termine_infotext">Du hast dich noch nicht mit deinem JG-Code angemeldet. Bitte gib deinen JG-Code in den Einstellungen ein. Wenn du deinen JG-Code nicht kennst dann kontaktiere bitte deinen JG-Leiter.</string>
+    <string name="section_termine_listview_morgen">morgen</string>
+    <string name="section_termine_listview_heute">heute</string>
+    <string name="section_termine_listview_uhr">Uhr</string>
+    <string name="section_termine_tageserantwortlicher"> Tagesverantwortlicher: </string>
+    <string name="section_termine_musik"> Musik: </string>
+    <string name="section_termine_essen"> Essen: </string>
+    <string name="section_termine_wtag">Wochentag</string>
+    <string name="section_termine_date">Datum</string>
+    <string name="section_termine_personalinformation">personalinformation</string>
+    <string name="section_termine_time">Zeit</string>
+
+   
+</resources>
