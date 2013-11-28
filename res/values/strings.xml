@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Info-App</string>
+    <string name="app_name">GlaRo Evangelische Jugend </string>
     
     
     <string name="url_losungen_herrenhuter1">© Evangelische Brüder-Unität – Herrnhuter Brüdergemeine</string>
@@ -16,7 +16,7 @@
     <string name="storage_filename_groupes">Groupes1.ser</string>
     <string name="storage_filename_infotext">Info1.ser</string>
     <string name="storage_filename_termine_notify">NotificationTermine1.ser</string>
-    <string name="storage_folder">/JG-Info</string>
+    <string name="storage_folder">/GlaRo</string>
 
     <string name="broadcast_intent_downloadfinished" >DownloadFinished</string>
     <string name="broadcast_intent_losugenfinished" >LosungenFinished</string>

@@ -1,3 +1,7 @@
 # cache for current jar dependency. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
+1385589588755 343731 3d62997c154488738d1367406fb7ac6074f992e2 C:\android\Info-App\libs\android-support-v7-appcompat.jar
+1385589588755 343731 3d62997c154488738d1367406fb7ac6074f992e2 C:\android\android-support-v7-appcompat\libs\android-support-v7-appcompat.jar
+1385589587264 621451 5896b0a4e377ac4242eb2bc785220c1c4fc052f4 C:\android\android-support-v7-appcompat\libs\android-support-v4.jar
+1376666290000 556198 4a6be13368bb64c5a0b0460632d228a1a915f58f C:\android\Info-App\libs\android-support-v4.jar

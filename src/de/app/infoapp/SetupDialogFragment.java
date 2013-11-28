@@ -46,6 +46,7 @@ public class SetupDialogFragment extends DialogFragment {
 		UsernameEditText = (EditText) itemView.findViewById(R.id.dialog_main_setup_usernameET);
 		
 		
+		
 		adapter = new GroupeArrayAdapter(getActivity(), GroupeListView);
 		GroupeListView.setAdapter(adapter);
 

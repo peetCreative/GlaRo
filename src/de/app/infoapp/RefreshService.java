@@ -136,7 +136,7 @@ public class RefreshService extends Service {
 	
 	private void checkDir(){
 	    String root = Environment.getExternalStorageDirectory().toString();
-	    File LosungenDir = new File(root + "/JG-Info");  
+	    File LosungenDir = new File(root + getResources().getString(R.string.storage_folder));  
 	    if(!LosungenDir.exists()){
 	    	LosungenDir.mkdirs();
 	    	
