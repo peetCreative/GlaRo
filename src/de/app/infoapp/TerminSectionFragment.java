@@ -88,7 +88,7 @@ private class DownloadReadyBroadcastReceiver extends BroadcastReceiver{
 	    zeilenfarbe2 = res.getColor(R.color.termine_zeilenfarbe2);
 	    
 	    
-	    rootView.setBackgroundColor(color_bg);
+	    //rootView.setBackgroundColor(color_bg);
 	    
 
 	    
@@ -175,6 +175,7 @@ private class DownloadReadyBroadcastReceiver extends BroadcastReceiver{
 			TextView persinfoTV = (TextView) itemView.findViewById(R.id.item_Tagesleitung);
 
 			itemView.setBackgroundColor(termin.getColorbgFormated(getActivity().getResources(), position));
+			
 
 			wtagTV.setText(termin.getWtagFormated(getActivity().getResources()));
 			wtagTV.setTextColor(termin.getColorWtagSchriftFormated(getActivity().getResources()));

@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v4.app.Fragment;
@@ -97,6 +98,7 @@ ActionBar.TabListener {
 		setContentView(R.layout.activity_main);
 		
 		
+		
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -111,7 +113,7 @@ ActionBar.TabListener {
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		
 		
-		
+		//setBackgroundResource(R.drawable.hintergrund1);
 		
 		
 		
@@ -310,6 +312,12 @@ ActionBar.TabListener {
 			}
 			return null;
 		}
+	}
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+	    super.onConfigurationChanged(newConfig);
+
+
 	}
 
 /**

@@ -39,9 +39,6 @@ public class RefreshService extends Service {
 	private  ArrayList<Termin>  mTermineNew= new ArrayList<Termin>();
 	private ArrayList<String> mInfoText = new ArrayList<String>();
 
-
-	
-
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		

@@ -94,6 +94,7 @@
     <string name="section_termine_date">Datum</string>
     <string name="section_termine_personalinformation">personalinformation</string>
     <string name="section_termine_time">Zeit</string>
+    <string name="section_termine_aktuelles">Bitte auf aktualisieren klicken!</string>
 
    
 </resources>

@@ -71,7 +71,8 @@ public class LosungSectionFragment extends Fragment {
 		
 	    Resources res = getResources();
 	    int color_bg = res.getColor(R.color.app_bg);
-	    rootView.setBackgroundColor(color_bg);
+	    //rootView.setBackgroundResource(R.drawable.hintergrund1);
+	    
 
 		try {
 			fillAll();
