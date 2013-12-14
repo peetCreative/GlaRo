@@ -73,6 +73,8 @@ public class RefreshService extends Service {
 						JGApplication.setmInfoText(mInfoText);
 						storeInfoText();
 						JGApplication.setmInfoText(mInfoText);
+
+						//System.out.println(mTermineNew.get(0).toString());
 						syncTermine();
 						
 					
@@ -258,7 +260,10 @@ public class RefreshService extends Service {
 						Tag,//Tag
 						Stunden,//Stunden
 						Minuten//Minuten
+						
 						);
+				datum.set(Calendar.SECOND, 0);
+				datum.set(Calendar.MILLISECOND, 0);
 				//System.out.println(feldString[0]);
 				
 				
@@ -274,7 +279,7 @@ public class RefreshService extends Service {
 							sharPref.getString(getResources().getString(R.string.settings_key_noify_when), "20min"),
 							Integer.parseInt(feldString[11])+10000000*groupe.getId()
 							);
-					
+					//System.out.println(Integer.parseInt(feldString[11])+10000000*groupe.getId());
 					if(termin.getDatum().after(vorVierStunden)){
 						mTermineNew.add(termin);
 						//System.out.println("Termin erstellt");
@@ -285,6 +290,36 @@ public class RefreshService extends Service {
 					}
 				}
 			}
+
+			/*start Test
+			datum =Calendar.getInstance();
+			datum.add(Calendar.HOUR, 1);
+			//System.out.println(feldString[0]);
+			
+			//System.out.println("Termin erstellt214");
+			if (datum.isLenient()){
+				
+				Termin termin = new Termin(datum,
+						"Anlasssfjsdö",//Event/Prediger
+						"der Pgfdapst",//Tagesleitung
+						"paukesdn und Trompeten",//Musik
+						"dosengfsdravioli",//Essen
+						"gaasdant viel Text den ejh niemand liest" ,// Zusatzinfo
+						true,
+						 "1hour",
+						59+10000000*groupe.getId()
+						);
+				
+				if(termin.getDatum().after(vorVierStunden)){
+					mTermineNew.add(termin);
+					System.out.println("Termin erstellt");
+				}
+				else{
+					System.out.println("Termin erstellt nicht");
+					
+				}
+				// ende Test
+			}*/
 		
 		}catch(Exception e){
 			
@@ -293,14 +328,21 @@ public class RefreshService extends Service {
 		}
 		
 	}
-	
+	/* mTermineNew ist die Liste aller neuen TErmine
+	 * mtermineOld die alten  Termine
+	 * 
+	 * Man nehme sich der Reihe nach jeden altenTermin
+	 * überprüfe die Liste mit den neuen Terminen ob der alte enthalten ist per ID
+	 * 	wenn er enthalten ist setzt man isRemeber und NotificationWhen bei dem Termin aus der neuen Liste
+	 * 	wenn nicht passiert nix
+	 */
 	private void syncTermine(){
-		ArrayList<Termin> mtermine = JGApplication.getmTermine();
+		ArrayList<Termin> mtermineOld = JGApplication.getmTermine();
 		int i= -1;
-		for (Termin ter:mtermine){
-			if(!((i=Termin.contains(mTermineNew,ter))==-1)){
-				mTermineNew.get(i).setRemember(ter.isRemember());
-				mTermineNew.get(i).setNotificationWhen(ter.getNotificationWhen());
+		for (Termin terOld:mtermineOld){
+			if(((i=Termin.contains(mTermineNew,terOld))!=-1)){
+				mTermineNew.get(i).setRemember(terOld.isRemember());
+				mTermineNew.get(i).setNotificationWhen(terOld.getNotificationWhen());
 				
 			}
 

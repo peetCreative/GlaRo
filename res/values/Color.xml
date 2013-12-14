@@ -6,7 +6,7 @@
     <color name="termine_morgen_bg">#80019ee1</color>
     <color name="termine_morgen_schrift">#d9e6b0</color>
     <color name="termine_heute_bg">#80ffed02</color>
-    <color name="termine_heute_schrift">#a6d7d3</color>
+    <color name="termine_heute_schrift">#000000</color>
     <color name="termine_zeilenfarbe1">#80FEF0C0</color>
     <color name="termine_zeilenfarbe2">#50D5DDF0</color>
     <color name="termine_schrift_schwarz">#000000</color>

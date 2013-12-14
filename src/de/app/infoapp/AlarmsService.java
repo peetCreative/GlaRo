@@ -19,7 +19,6 @@ import android.content.Intent;
 import android.os.Binder;
 import android.os.Environment;
 import android.os.IBinder;
-import android.widget.Toast;
 
 
 public class AlarmsService extends Service {
@@ -41,7 +40,7 @@ public class AlarmsService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		this.am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-		
+		System.out.println("alarmService");
 		exchange();
 		
 		return Service.START_NOT_STICKY;
@@ -61,19 +60,68 @@ public class AlarmsService extends Service {
 			@Override
 			public void run() {
 				getgesetzteNotificationsFromStorage();
+				//System.out.println("gesetzteNofications size" +gesetzteNotifications.size());
 				ArrayList<Termin> zusetztenTermine = new ArrayList<Termin>();
 				for(Termin termin:JGApplication.getmTermine()){
 					if(termin.isRemember()){
 						zusetztenTermine.add(termin);
 					}
 				}
+				/*if(gesetzteNotifications.isEmpty()){
+					System.out.println("is Empty");
+					
+				}else{
+					System.out.println("is nicht Empty");
+					
+					//System.out.println(gesetzteNotifications.get(0).toString());
+					System.out.println(gesetzteNotifications.size());
+					
+					
+				}*/
+				
+				for(Termin gtermin:gesetzteNotifications){
+					if(-1== Termin.contains(zusetztenTermine, gtermin)){
+						removeTermin(gtermin);
+						gesetzteNotifications.remove(gtermin);
+					}
+				}/*
+				System.out.println("zusetztenTermine"+ zusetztenTermine.size());
+				for(Termin mtermin:zusetztenTermine){
+					System.out.println(mtermin.getAnlass());
+					System.out.println(mtermin.getID());
+					System.out.println(mtermin.getNotificationWhen());
+					System.out.println(" ");
+				}
+				System.out.println("gesetzteTermine"+ gesetzteNotifications.size());
+				for(Termin mtermin:gesetzteNotifications){
+					System.out.println(mtermin.getAnlass());
+					System.out.println(mtermin.getID());
+					System.out.println(mtermin.getNotificationWhen());
+					System.out.println(" " );
+				}*/
+				
+				for(Termin mtermin:zusetztenTermine){
+					System.out.println("überprüfe "+mtermin.getAnlass());
+					if(-1 == Termin.containsTime(gesetzteNotifications,mtermin)){
+						addTermin(mtermin);
+						gesetzteNotifications.add(mtermin);
+					}
+				}
+				storegesetzteNotifications();
+				/*
 				if(!zusetztenTermine.equals(gesetzteNotifications)){
-					//System.out.println("setzt Notification");
+					System.out.println("setzt Notification");
 					removeAll();
 					addAll();
 					storegesetzteNotifications();
 					
+				}else{
+					System.out.println("setze keine Notifications");
+
 				}
+				if(!gesetzteNotifications.isEmpty()){
+					addTermin(gesetzteNotifications.get(0));
+				}*/
 				storeTermine();
 				
 				//Toast toast = Toast.makeText(getApplicationContext(), "Alarms fertig", Toast.LENGTH_LONG);
@@ -137,8 +185,10 @@ public class AlarmsService extends Service {
 	}
 	
 	private void removeAll() {
+		
 		if(!(this.gesetzteNotifications.isEmpty())){
 			for (Termin termin : gesetzteNotifications){
+				System.out.println("delete" + termin.toString());
 				removeTermin(termin);
 			}
 			
@@ -147,11 +197,12 @@ public class AlarmsService extends Service {
 	}
 
 	private void addAll() {
+		System.out.println("notify");
 		for(Termin termin: JGApplication.getmTermine()){
 			if(termin.isRemember()){
+				System.out.println("add" + termin.toString());
 				addTermin(termin);
 				gesetzteNotifications.add(termin);
-				//System.out.println("notify");
 			}
 			
 		}
@@ -159,36 +210,39 @@ public class AlarmsService extends Service {
 	}
 
 	private void addTermin(Termin termin){
+		
 		Intent intent = new Intent(getApplicationContext(), NotifyService.class);
 		intent.putExtra(NotifyService.INTENT_NOTIFY, true);
 		intent.putExtra("termin", termin);
 		PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(),termin.getID(), intent, 0);
 		// Sets an alarm - note this alarm will be lost if the phone is turned off and on again
-		int field= Calendar.MINUTE, verzug=0;
-		Calendar alarmTermin = termin.getDatum();
-		if(termin.getNotificationWhen().equals(getString(R.string.settings_termin_whennotify_nullmin))){
+		String[] a = getResources().getStringArray(R.array.listValues);
+		int field = Calendar.MINUTE, verzug=0;
+		Calendar alarmTermin= Calendar.getInstance();
+				alarmTermin.setTimeInMillis(termin.getDatum().getTimeInMillis());
+		if(termin.getNotificationWhen().equals(a[0])){
 			verzug=0;
 			field= Calendar.MINUTE;
 		}
-		if(termin.getNotificationWhen().equals(getString(R.string.settings_termin_whennotify_zwanzigmin))){
+		if(termin.getNotificationWhen().equals(a[1])){
 			verzug=-20;
 			field= Calendar.MINUTE;
 		}
-		if(termin.getNotificationWhen().equals(getString(R.string.settings_termin_whennotify_einsh))){
+		if(termin.getNotificationWhen().equals(a[2])){
 			verzug=-1;
 			field= Calendar.HOUR;
 		}
-		if(termin.getNotificationWhen().equals(getString(R.string.settings_termin_whennotify_dreih))){
+		if(termin.getNotificationWhen().equals(a[3])){
 			verzug=-3;
 			field= Calendar.HOUR;
 		}
-		if(termin.getNotificationWhen().equals(getString(R.string.settings_termin_whennotify_sechsam))){
+		if(termin.getNotificationWhen().equals(a[4])){
 			verzug=0;
 			field= Calendar.MINUTE;
 			alarmTermin.set(Calendar.HOUR, 6);
 			alarmTermin.set(Calendar.MINUTE, 0);
 		}
-		if(termin.getNotificationWhen().equals(getString(R.string.settings_termin_whennotify_achtam))){
+		if(termin.getNotificationWhen().equals(a[5])){
 			verzug=0;
 			field= Calendar.MINUTE;
 			alarmTermin.set(Calendar.HOUR, 8);
@@ -196,11 +250,14 @@ public class AlarmsService extends Service {
 		}
 			
 		alarmTermin.roll(field, verzug);
-		
+		//alarmTermin.add(Calendar.MINUTE, -20);
+		Calendar date2= Calendar.getInstance();
+		date2.setTimeInMillis(alarmTermin.getTimeInMillis());
 		am.set(AlarmManager.RTC, alarmTermin.getTimeInMillis(), pendingIntent);
-		
+		System.out.println("add " + termin.getAnlass()  + termin.getNotificationWhen()+" " +verzug +" "+  date2.get(Calendar.MINUTE) + " "+ termin.getTimeFormated(getApplicationContext().getResources()));
 	}
 	private void removeTermin(Termin termin){
+		System.out.println("remove " +termin.getAnlass());
 		Intent intent = new Intent(getApplicationContext(), NotifyService.class);
 		intent.putExtra(NotifyService.INTENT_NOTIFY, true);
 		intent.putExtra("termin", termin);

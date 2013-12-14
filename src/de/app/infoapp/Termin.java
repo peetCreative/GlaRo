@@ -114,7 +114,7 @@ public class Termin implements Serializable, Comparable<Termin> {
 		EssenVerantworlicher = essenVerantworlicher;
 	}
 	@Override
-	public boolean equals(Object o) {
+	public boolean equals(Object o) { // benutzt in ArrayList vergleich
 		
 		try{
 			Termin mTermin= (Termin) o;
@@ -135,15 +135,20 @@ public class Termin implements Serializable, Comparable<Termin> {
 // mit && implementieren
 		
 			if(!(mTermin.getID()==(this.ID))){
+				//System.out.println("ID"+ this.getAnlass());
 				return false;
 			}
 			if(!mTermin.getDatum().equals(this.Datum)){
+				
 				return false;
+				
 			}
 			if(!mTermin.isRemember() == this.Remember){
+				
 				return false;
 			}
-			if(!(mTermin.getNotificationWhen() ==NotificationWhen)){
+			if(!(mTermin.getNotificationWhen().equals(this.NotificationWhen))){
+				
 				return false;
 			}
 		if(!(i==1)){
@@ -164,6 +169,7 @@ public class Termin implements Serializable, Comparable<Termin> {
 			}
 			
 		}
+		
 		return true;
 	}
 	
