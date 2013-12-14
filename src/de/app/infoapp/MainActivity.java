@@ -196,6 +196,10 @@ ActionBar.TabListener {
 		return true;
 	}
 	
+	public void onTextClick(View v){
+		 ((TerminSectionFragment) mSectionsPagerAdapter.getItem(0)).expandText();
+	}
+	
 	@Override
 	public void onStop() {
 	//System.out.println("onStop()");//gute Idee noch mal überlegen Settings auch gucken

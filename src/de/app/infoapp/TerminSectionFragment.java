@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import de.app.infoapp.R;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -40,7 +41,6 @@ int color_bg,
 	zeilenfarbe2;
 static TextView NewsTV, GroupeTV ;
 static ListView terminListe;
-
 
 private BroadcastReceiver mMessageReceiver;
 
@@ -107,7 +107,22 @@ private class DownloadReadyBroadcastReceiver extends BroadcastReceiver{
 	}
 
 
-
+	
+	public boolean expandText(){
+		
+		
+		
+		if(JGApplication.expand == 3){
+			JGApplication.expand = 20; 
+			NewsTV.setMaxLines(20);
+			
+			return true;
+		}else{
+			NewsTV.setMaxLines(3);
+			JGApplication.expand = 3; 
+			return true;
+		}
+	}
 
 
 
@@ -119,8 +134,10 @@ private class DownloadReadyBroadcastReceiver extends BroadcastReceiver{
 		
 		if(!JGApplication.getmInfoText().isEmpty()){
 			String[] Info = JGApplication.getmInfoText().get(JGApplication.getInfoTextNumber()).split("QWYD");
+			
 			NewsTV.setText(Info[1]);
 			GroupeTV.setText(Info[0]);
+			
 		}
 	}
 
@@ -197,6 +214,7 @@ private class DownloadReadyBroadcastReceiver extends BroadcastReceiver{
 			
 			return itemView;
 		}
+
 		
 	}
 

@@ -10,18 +10,21 @@
         android:layout_height="wrap_content"
         android:text="Gruppennamen" />
 
-        <TextView
-            android:id="@+id/NewsTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/section_termine_aktuelles"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/NewsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/section_termine_aktuelles"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:maxLines="3"
+		android:ellipsize="end"
+		android:onClick="onTextClick"
+		android:clickable="true"	/>
 
-        <ListView
-            android:id="@+id/terminLV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </ListView>
+    <ListView
+        android:id="@+id/terminLV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </LinearLayout>

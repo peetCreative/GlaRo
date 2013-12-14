@@ -37,7 +37,8 @@ public class JGApplication extends Application {
 		
 		private static int InfoTextNumber = 0;
 		
-		
+		public static int expand = 3;
+
 
 
 		
